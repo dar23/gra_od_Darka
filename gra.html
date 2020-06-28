@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="piwozlop.css">
+</head>
+<body >
+<div class="pole" onload="liczenie()"></div>         
+               
+<button type='button' class="start" onclick="start()">start</button>
+
+<div class='beer' onclick="zliczanie()" ></div>
+
+<div class="score"></div>
+
+
+
+
+<script>
+
+  var beer= document.querySelector('.beer');
+  
+  var tablica_zliczen = document.querySelector('.pole');
+
+  var body_onmouse= document.getElementsByTagName("body")[0];
+
+  var klikniecia=document.querySelector('.score');
+  
+  var pierwsze_klikniecie=1;
+        
+  var zwieksz = l.innerHTML;
+
+
+  function start(){
+    
+var i = Math.floor((Math.random() * 800)*1.5);
+
+beer.style.left=i+"px";
+
+tablica_zliczen.innerHTML=setTimeout(start,1500);
+
+
+if(tablica_zliczen.innerHTML<10){
+
+beer.animate([
+  { transform: 'translateY(600px)', opacity:'1' }, 
+  { transform: 'translateY(-400px)',opacity:'0.1' }
+  ],{
+  duration: 1200,
+});
+
+}
+
+if(tablica_zliczen.innerHTML>=10 && tablica_zliczen.innerHTML<20){
+
+  beer.animate([
+  { transform: 'translateY(600px)', opacity:'1' }, 
+  { transform: 'translateY(-400px)',opacity:'0.1' }
+  ],{
+  duration: 1000,
+});
+
+}
+
+if(tablica_zliczen.innerHTML>=20){
+
+  beer.animate([
+  { transform: 'translateY(600px)', opacity:'1' }, 
+  { transform: 'translateY(-400px)',opacity:'0.1' }
+  ],{
+  duration: 800,
+});
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ function zliczanie(){
+  
+  beer.addEventListener('click', myfunction());
+  
+      function myfunction(){
+          
+       klikniecia.innerHTML=pierwsze_klikniecie++;
+  }
+  
+
+}
+
+
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+
+
+</body>
+</html>
